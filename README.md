@@ -4,8 +4,9 @@
 
 | | |
 | --- | --- |
-| <a href="https://ibb.co/gFmkXRt7"><img src="https://i.ibb.co/sJb8DVsP/Ekran-Resmi-2025-02-10-22-39-49.png" alt="Ekran-Resmi-2025-02-10-22-39-49" border="0" style="max-width:100%; height:auto;"></a> | <a href="https://ibb.co/XrDfh2xG"><img src="https://i.ibb.co/9khmF8Hd/Ekran-Resmi-2025-02-10-22-41-22.png" alt="Ekran-Resmi-2025-02-10-22-41-22" border="0" style="max-width:100%; height:auto;"></a> |
-| <a href="https://ibb.co/Vp9RrtJj"><img src="https://i.ibb.co/k6Bjkx5H/Ekran-Resmi-2025-02-10-22-41-02.png" alt="Ekran-Resmi-2025-02-10-22-41-02" border="0" style="max-width:100%; height:auto;"></a> | <a href="https://ibb.co/1YDy18bQ"><img src="https://i.ibb.co/tw7jg83K/Ekran-Resmi-2025-02-10-22-40-49.png" alt="Ekran-Resmi-2025-02-10-22-40-49" border="0" style="max-width:100%; height:auto;"></a> |
+| <img src="https://i.ibb.co/sJb8DVsP/Ekran-Resmi-2025-02-10-22-39-49.png" style="max-width:100%; height:auto;"> | <img src="https://i.ibb.co/9khmF8Hd/Ekran-Resmi-2025-02-10-22-41-22.png" style="max-width:100%; height:auto;"> |
+| <img src="https://i.ibb.co/k6Bjkx5H/Ekran-Resmi-2025-02-10-22-41-02.png" style="max-width:100%; height:auto;"> | <img src="https://i.ibb.co/tw7jg83K/Ekran-Resmi-2025-02-10-22-40-49.png" style="max-width:100%; height:auto;"> |
+
 
 ## Overview
 
