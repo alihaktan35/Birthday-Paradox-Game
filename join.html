@@ -1,0 +1,54 @@
+<!doctypehtml><html lang=en><meta charset=UTF-8><meta content="width=device-width,initial-scale=1"name=viewport><title>Join Game - Birthday Paradox</title><link href=favicon.ico rel=icon type=image/x-icon><link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto:wght@400;700&display=swap"rel=stylesheet><style>body{background:linear-gradient(135deg,#ffafbd,#ffc3a0);font-family:Roboto,sans-serif;margin:0;padding:0;display:flex;align-items:center;justify-content:center;min-height:100vh}.container{background:rgba(255,255,255,.9);border-radius:10px;padding:30px;box-shadow:0 8px 16px rgba(0,0,0,.3);text-align:center;width:90%;max-width:400px}h1{font-family:Bangers,cursive;font-size:2.5rem;margin-bottom:20px;color:#333;text-shadow:1px 1px #fff}input{width:80%;padding:12px;margin:10px 0;border:2px solid #ffc3a0;border-radius:30px;font-size:1rem;outline:0;transition:border-color .3s ease}input:focus{border-color:#ff5f6d}button{background:linear-gradient(45deg,#ff5f6d,#ffc371);border:none;border-radius:30px;color:#fff;padding:12px 20px;font-size:1.2rem;margin:10px;cursor:pointer;transition:transform .2s ease;box-shadow:0 4px 6px rgba(0,0,0,.2)}button:hover{transform:scale(1.05)}.step{display:none}.step.active{display:block}p{font-size:1rem;color:#333}@media (max-width:600px){h1{font-size:2rem}input{width:90%;font-size:.9rem}button{font-size:1rem;padding:10px 16px}}</style><div class=container><h1>Join Game</h1><div class="step active step1"><input id=gameCode placeholder="Enter Game Code"required> <button onclick=checkGameCode()>Next</button><p id=gameCodeError></div><div class="step step2"><input id=nickname placeholder="Enter Nickname"required> <input id=birthday placeholder="Enter Birthday (MM-DD)"required> <button onclick=joinGame()>Join Game</button></div></div><script>let gameCode;
+
+    async function checkGameCode() {
+      gameCode = document.getElementById('gameCode').value.trim();
+
+      const response = await fetch('api.php?action=checkGameCode', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ gameCode })
+      });
+      const data = await response.json();
+
+      if (data.error) {
+        document.getElementById('gameCodeError').innerText = data.error;
+      } else {
+        document.querySelector('.step.step1').classList.remove('active');
+        document.querySelector('.step.step2').classList.add('active');
+      }
+    }
+
+    async function joinGame() {
+      const nickname = document.getElementById('nickname').value.trim();
+      const birthday = document.getElementById('birthday').value.trim();
+
+      // Validate input
+      if (!nickname || !birthday) {
+        alert("Please enter a nickname and a birthday.");
+        return;
+      }
+      if (!/^\d{2}-\d{2}$/.test(birthday)) {
+        alert("Please enter a valid birthday in MM-DD format.");
+        return;
+      }
+
+      try {
+        const response = await fetch('api.php?action=join', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ gameCode, nickname, birthday })
+        });
+        const data = await response.json();
+
+        if (data.error) {
+          alert(data.error);
+          return;
+        }
+
+        // Store game data in sessionStorage and redirect without sensitive info in URL
+        sessionStorage.setItem("gameData", JSON.stringify({gameCode: gameCode, nickname: nickname, host: false}));
+        window.location.href = "game.html";
+      } catch (error) {
+        alert("An error occurred while joining the game.");
+      }
+    }</script>
