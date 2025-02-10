@@ -20,9 +20,6 @@ In this game, one user acts as the host to create a game room with a unique 6-ch
 - **Game Control:**  
   The host can end the game. A countdown is triggered, after which the matching results (players sharing the same birthday) are revealed.
 
-- **Informative Section:**  
-  An expandable section titled "What is birthday paradox?" provides a concise explanation of the paradox in clear, easy-to-understand English.
-
 - **Responsive & Themed Design:**  
   The interface features a modern, responsive design with a custom "Birthday Paradox" theme, including a gradient background and custom fonts (Google Fonts: Bangers and Roboto). This ensures an enjoyable experience on both desktop and mobile devices.
 
@@ -45,4 +42,4 @@ In this game, one user acts as the host to create a game room with a unique 6-ch
 
 ## Try yourself
 
-ahsdev.com.tr/birthdayparadox
+<a href="https://ahsdev.com.tr/birthdayparadox" target="_blank" rel="noopener noreferrer">ahsdev.com.tr/birthdayparadox</a>
